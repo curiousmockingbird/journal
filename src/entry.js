@@ -3,6 +3,13 @@ export default function Entry(text) {
 }
 
 Entry.prototype.wordCounter = function() {
-console.log(this.entry.split(" "));
+  const toCount = this.entry.split(" ");
+  let counter = 0;
+  toCount.forEach(function(){
+    counter++;
+    console.log(counter);
+  });
+  console.log(toCount);
+  return counter;
 };
 
