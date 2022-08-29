@@ -1,20 +1,14 @@
-import Triangle from "./triangle.js";
+import Entry from "./entry.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import './css/styles.css';
 
-function handleFormSubmission(event) {
+function handleFormSubmission(event){
   event.preventDefault();
-  const length1 = parseInt(document.querySelector('#length1').value);
-  const length2 = parseInt(document.querySelector('#length2').value);
-  const length3 = parseInt(document.querySelector('#length3').value);
-  const triangle = new Triangle(length1, length2, length3);
-  const response = triangle.checkType();
-  const pTag = document.createElement("p");
-  pTag.append(response);
-  document.querySelector('#response').append(pTag);
+  const entry = new Entry();
+  console.log(entry);
 }
 
-window.addEventListener("load", function() {
-  document.querySelector("#triangle-checker-form").addEventListener("submit", handleFormSubmission);
+window.addEventListener("load", function(){
+  document.querySelector("body").addEventListener("submit", handleFormSubmission);
 });
